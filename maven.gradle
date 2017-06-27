@@ -1,6 +1,6 @@
 apply plugin: 'com.github.dcendents.android-maven'
-// GitHub账户名 https://github.com/yylxy/YYUtils
-group = ' https://github.com/yylxy/YYUtils'
+// GitHub账户名 https://github.com/yylxy/YYUtilsNew.git
+group = 'com.github.yylxy.YYUtilsNew'
 
 // 指定编码
 tasks.withType(JavaCompile) {
