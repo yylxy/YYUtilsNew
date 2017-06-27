@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "lyxs916.addressselect"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+    }
+    //进行代码混淆打包的方法
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //增加依赖的权限
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    /*=====================================================Android libs=========================================================*/
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+
+    /*=====================================================远程libs=========================================================*/
+    //注解库
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.jakewharton:butterknife-compiler:8.5.1'
+    //引导页
+//    compile 'com.github.yylxy.yyUtils4:guidance_activity:1.1.3'
+
+//    compile 'com.github.yylxy.YYUtils:banner:1.1.2'
+
+    /*=====================================================本地libs=========================================================*/
+    //dialog联动地址选择
+    compile project(':dialog_select_address')
+    //ui库（SnackbarUtils）
+    compile project(':ui_utils')
+    //引导页
+    compile project(':guidance_activity')
+    //view 测试
+    compile project(':view_utils')
+    //图片裁剪
+    compile project(':photoCrop')
+    //广告位
+    compile project(':banner')
+
+    /*=====================================================arr=========================================================*/
+    //    compile(name: 'dialog_select_address-debug', ext: "aar") //dialog联动地址选择
+
+}
