@@ -1,6 +1,7 @@
 package lyxs916.demotest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -26,6 +27,11 @@ public class BannerActivity extends Activity implements CBViewHolderCreator {
     @BindView(R.id.advertisement)
     ConvenientBanner advertisement;
     List<BannerAdData> advertisementDatas = new ArrayList<>();
+
+    public static void starUi(Activity context) {
+        Intent intent = new Intent(context, BannerActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

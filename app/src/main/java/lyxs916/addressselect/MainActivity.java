@@ -1,6 +1,6 @@
 package lyxs916.addressselect;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import lyxs916.demotest.BannerActivity;
+import lyxs916.demotest.PhotoCropTest;
 import lyxs916.dialogselectaddress.DialogCitySelect;
 import lyxs916.guidance_activity.GuidanceActivity;
 import lyxs916.java_bean.MainData;
-import lyxs916.demotest.BannerActivity;
-import lyxs916.demotest.PhotoCropTest;
 import lyxs916.ui_utils.SnackbarUtils;
 import lyxs_916.view_utils.photo.PhotoActivity;
 
@@ -29,25 +29,27 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<MainData> mDatas = new ArrayList<>();
     MyAdapter adapter;
+    Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mActivity = this;
 
-        mDatas.add(new MainData(1, "地址选择", getResources().getColor(R.color.blue),""));
-        mDatas.add(new MainData(2, "snackbar 测试", getResources().getColor(R.color.blue),""));
-        mDatas.add(new MainData(3, "引导页", getResources().getColor(R.color.blue),""));
-        mDatas.add(new MainData(4, "图片的缩放", getResources().getColor(R.color.blue),PhotoActivity.class.getName()));
-        mDatas.add(new MainData(5, "图片裁剪", getResources().getColor(R.color.blue),PhotoCropTest.class.getName()));
-        mDatas.add(new MainData(6, "广告位", getResources().getColor(R.color.blue),BannerActivity.class.getName()));
+        mDatas.add(new MainData(0, "地址选择", getResources().getColor(R.color.blue), ""));
+        mDatas.add(new MainData(1, "snackbar 测试", getResources().getColor(R.color.blue), ""));
+        mDatas.add(new MainData(2, "引导页", getResources().getColor(R.color.blue), ""));
+        mDatas.add(new MainData(3, "图片的缩放", getResources().getColor(R.color.blue), PhotoActivity.class.getName()));
+        mDatas.add(new MainData(4, "图片裁剪", getResources().getColor(R.color.blue), PhotoCropTest.class.getName()));
+        mDatas.add(new MainData(5, "广告位", getResources().getColor(R.color.blue), BannerActivity.class.getName()));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter = new MyAdapter(mDatas));
 
         adapter.setOnClickListener(new OnItemClickListener() {
-             @Override
+            @Override
             public void ItemClickListener(View view, final int postion) {
 
                 switch (postion) {
@@ -80,27 +82,16 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                         break;
-                    case 3:
-                        Intent intent = new Intent();
-                        intent.setClass(MainActivity.this, PhotoActivity.class);
-                        startActivity(intent);
+                    case 3://图片的缩放
+                        PhotoActivity.starUi(mActivity);
                         break;
-
-                    case 4:
-                        Intent intent2 = new Intent();
-                        intent2.setClass(MainActivity.this, PhotoCropTest.class);
-                        startActivity(intent2);
-
+                    case 4://照片的裁剪演示
+                        PhotoCropTest.starUi(mActivity);
                         break;
-                    case 5:
-                        Intent intent3 = new Intent();
-                        intent3.setClass(MainActivity.this, BannerActivity.class);
-                        startActivity(intent3);
-//                        startActivity(new Intent(mDatas.get(postion).getClassName()));
-
+                    case 5://广告位的演示
+                        BannerActivity.starUi(mActivity);
                         break;
                 }
-
             }
 
             @Override
@@ -115,9 +106,11 @@ public class MainActivity extends AppCompatActivity {
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         ArrayList<MainData> mDatas;
         private OnItemClickListener mListener;
+
         public MyAdapter(ArrayList<MainData> datas) {
             mDatas = datas;
         }
+
         public void setOnClickListener(OnItemClickListener listener) {
             this.mListener = listener;
         }
@@ -161,9 +154,11 @@ public class MainActivity extends AppCompatActivity {
         public int getItemCount() {
             return mDatas.size();
         }
+
         class MyViewHolder extends RecyclerView.ViewHolder {
             TextView number;
             TextView describe;
+
             public MyViewHolder(View itemView) {
                 super(itemView);
                 number = (TextView) itemView.findViewById(R.id.number);
@@ -178,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
      */
     interface OnItemClickListener {
         void ItemClickListener(View view, int postion);
+
         void ItemLongClickListener(View view, int postion);
     }
 

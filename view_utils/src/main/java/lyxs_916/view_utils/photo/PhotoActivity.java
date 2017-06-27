@@ -1,6 +1,7 @@
 package lyxs_916.view_utils.photo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -8,11 +9,14 @@ import lyxs_916.view_utils.R;
 
 
 /**
- * Created by yang on 2017/2/4.
+ * 说明:图片的缩放
+ * 作者： 杨阳; 创建于：  2017-06-27  16:45
  */
-
 public class PhotoActivity extends Activity {
-
+    public static void starUi(Activity context) {
+        Intent intent = new Intent(context, PhotoActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

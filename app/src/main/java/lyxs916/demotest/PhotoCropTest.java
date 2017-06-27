@@ -22,6 +22,12 @@ import lyxs916.addressselect.R;
 public class PhotoCropTest extends Activity {
     private ImageView resultView;
 
+    public static void starUi(Activity context) {
+        Intent intent = new Intent(context, PhotoCropTest.class);
+        context.startActivity(intent);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
