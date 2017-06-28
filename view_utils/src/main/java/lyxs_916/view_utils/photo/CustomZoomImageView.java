@@ -71,6 +71,7 @@ public class CustomZoomImageView extends ImageView implements ViewTreeObserver.O
         mScaleMatrix = new Matrix();
         mScaleGestureDetector = new ScaleGestureDetector(context, this);
         setScaleType(ScaleType.MATRIX);
+        setOnTouchListener(this);
     }
 
     //注册
@@ -162,11 +163,19 @@ public class CustomZoomImageView extends ImageView implements ViewTreeObserver.O
         if (getDrawable() == null) return true;
 
         //缩放的范围
-        if ((scale < mMaxScale && scaleFactor > 1.0f) || (scale > mMinScale && scaleFactor < 1.0f)) {
+        if ((scale < mMaxScale && scaleFactor > 1.0f) || (scale > mInitScale && scaleFactor < 1.0f)) {
+            if (scale * scaleFactor < mInitScale) {
+                scaleFactor = mInitScale / scale;
+            }
+            if (scale * scaleFactor > mMaxScale) {
+                scale = mMaxScale / scale;
+            }
 
+            mScaleMatrix.postScale(scaleFactor, scaleFactor, getWidth() / 2, getHeight() / 2);
+            setImageMatrix(mScaleMatrix);
         }
 
-        return false;
+        return true;
     }
 
     @Override
