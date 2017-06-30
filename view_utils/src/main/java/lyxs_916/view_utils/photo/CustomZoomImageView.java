@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 
 
 /**
@@ -27,7 +26,7 @@ import android.widget.ImageView;
  * ViewTreeObserver.OnGlobalLayoutListener//布局生成后的监听
  * ScaleGestureDetector.OnScaleGestureListener//手势的监听
  */
-public class CustomZoomImageView extends ImageView implements ViewTreeObserver.OnGlobalLayoutListener,
+public class CustomZoomImageView extends android.support.v7.widget.AppCompatImageView implements ViewTreeObserver.OnGlobalLayoutListener,
         ScaleGestureDetector.OnScaleGestureListener,
         View.OnTouchListener {
     /**
@@ -171,7 +170,7 @@ public class CustomZoomImageView extends ImageView implements ViewTreeObserver.O
                 scale = mMaxScale / scale;
             }
 
-            mScaleMatrix.postScale(scaleFactor, scaleFactor, getWidth() / 2, getHeight() / 2);
+            mScaleMatrix.postScale(scaleFactor, scaleFactor, detector.getFocusX(), detector.getFocusY());
             setImageMatrix(mScaleMatrix);
         }
 
