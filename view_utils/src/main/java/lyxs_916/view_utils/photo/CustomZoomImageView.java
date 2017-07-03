@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -102,13 +103,13 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
                 if (getScale() < mMinScale) {
 //                    mScaleMatrix.postScale(mMinScale / getScale(), mMinScale / getScale(), x, y);
 //                    setImageMatrix(mScaleMatrix);
-                    postDelayed(new AutoScaleRunnable(mMinScale,x,y),16);
-                    isAutoScale=true;
+                    postDelayed(new AutoScaleRunnable(mMinScale, x, y), 16);
+                    isAutoScale = true;
                 } else {
 //                    mScaleMatrix.postScale(mInitScale / getScale(), mInitScale / getScale(), x, y);
 //                    setImageMatrix(mScaleMatrix);
-                    postDelayed(new AutoScaleRunnable(mInitScale,x,y),16);
-                    isAutoScale=true;
+                    postDelayed(new AutoScaleRunnable(mInitScale, x, y), 16);
+                    isAutoScale = true;
                 }
                 return true;
             }
@@ -310,16 +311,31 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
             mLastY = y;
         }
         mLastPositerCount = pointerCount;
-
+        RectF rectf = getRectFMatrix();
         switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                //图片大于控件时，并且父控件是ViewPage，不让其拦截事件
+                if (rectf.width() > getWidth()+0.01 || rectf.height() > getHeight()+0.01) {
+                    if (getParent() instanceof ViewPager) {
+                        getParent().requestDisallowInterceptTouchEvent(true);
+                    }
+                }
+
+                break;
             case MotionEvent.ACTION_MOVE:
+                //图片大于控件时，并且父控件是ViewPage，不让其拦截事件
+                if (rectf.width() > getWidth()+0.01 || rectf.height() > getHeight()+0.01) {
+                    if (getParent() instanceof ViewPager) {
+                        getParent().requestDisallowInterceptTouchEvent(true);
+                    }
+                }
                 float dx = x - mLastX;
                 float dy = y - mLastY;
                 if (!mIsCanDrag) {
                     mIsCanDrag = isMoveAction(dx, dy);
                 }
                 if (mIsCanDrag) {
-                    RectF rectf = getRectFMatrix();
+//                    RectF rectf = getRectFMatrix();
                     if (getDrawable() != null) {
                         isCheckLeftAndRight = isCheckTopAndBottom = true;
                         //如果宽度小于控件宽度，不允许横向移动
@@ -424,7 +440,7 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
 
             float currentScale = getScale();
             if ((tmpScale > 1.0f && currentScale < mTargetScalde)
-                    || (tmpScale < 1.0f && currentScale> mTargetScalde)) {
+                    || (tmpScale < 1.0f && currentScale > mTargetScalde)) {
                 postDelayed(this, 16);
 
                 //设置我们的目标值
@@ -433,7 +449,7 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
                 mScaleMatrix.postScale(scale, scale, x, y);
                 checkBoderAndCenterWhenScale();
                 setImageMatrix(mScaleMatrix);
-                isAutoScale=false;
+                isAutoScale = false;
             }
         }
     }
