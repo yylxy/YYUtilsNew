@@ -38,6 +38,7 @@ public class PhotoActivity extends Activity {
             public Object instantiateItem(ViewGroup container, int position) {
                 CustomZoomImageView imageView = new CustomZoomImageView(getApplicationContext());
                 imageView.setImageResource(pictures[position]);
+
                 container.addView(imageView);
                 imageViews[position] = imageView;
                 return imageView;

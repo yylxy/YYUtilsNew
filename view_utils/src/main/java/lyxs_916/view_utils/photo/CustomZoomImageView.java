@@ -6,6 +6,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -315,7 +316,7 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 //图片大于控件时，并且父控件是ViewPage，不让其拦截事件
-                if (rectf.width() > getWidth()+0.01 || rectf.height() > getHeight()+0.01) {
+                if (rectf.width() > getWidth() + 0.01 || rectf.height() > getHeight() + 0.01) {
                     if (getParent() instanceof ViewPager) {
                         getParent().requestDisallowInterceptTouchEvent(true);
                     }
@@ -324,7 +325,7 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
                 break;
             case MotionEvent.ACTION_MOVE:
                 //图片大于控件时，并且父控件是ViewPage，不让其拦截事件
-                if (rectf.width() > getWidth()+0.01 || rectf.height() > getHeight()+0.01) {
+                if (rectf.width() > getWidth() + 0.01 || rectf.height() > getHeight() + 0.01) {
                     if (getParent() instanceof ViewPager) {
                         getParent().requestDisallowInterceptTouchEvent(true);
                     }
@@ -355,6 +356,8 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
                 }
                 mLastX = x;
                 mLastY = y;
+
+                Log.e("AAA", "*****" + dx + "****" + dy);
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
@@ -397,7 +400,7 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
      * @return
      */
     private boolean isMoveAction(float dx, float dy) {
-        return Math.sqrt(dx * dy + dx * dy) > mTouchSlop;
+        return Math.sqrt(dx * dx + dy * dy) > mTouchSlop;
     }
 
     /**
