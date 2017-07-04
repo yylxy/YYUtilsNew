@@ -6,7 +6,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -115,6 +114,20 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
                 return true;
             }
         });
+    }
+
+
+    public void aaa(){
+        Drawable d = getDrawable();
+        if (d == null)
+            return;
+        int dw = d.getIntrinsicWidth();
+        int dh = d.getIntrinsicHeight();
+        postDelayed(new AutoScaleRunnable(mInitScale, dw/2, dh/2), 16);
+        isAutoScale = true;
+
+
+
     }
 
     //注册
@@ -316,18 +329,28 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 //图片大于控件时，并且父控件是ViewPage，不让其拦截事件
-                if (rectf.width() > getWidth() + 0.01 || rectf.height() > getHeight() + 0.01) {
+                if (rectf.width() >= getWidth() || rectf.height() > getHeight() + 0.01) {
                     if (getParent() instanceof ViewPager) {
                         getParent().requestDisallowInterceptTouchEvent(true);
+                        if (rectf.right-1 < getWidth()||rectf.left==0) {
+                            getParent().requestDisallowInterceptTouchEvent(false);
+                        } else {
+                            getParent().requestDisallowInterceptTouchEvent(true);
+                        }
                     }
                 }
 
                 break;
+            case MotionEvent.ACTION_SCROLL:
             case MotionEvent.ACTION_MOVE:
                 //图片大于控件时，并且父控件是ViewPage，不让其拦截事件
-                if (rectf.width() > getWidth() + 0.01 || rectf.height() > getHeight() + 0.01) {
+                if (rectf.width() >= getWidth() || rectf.height() > getHeight() + 0.01) {
                     if (getParent() instanceof ViewPager) {
-                        getParent().requestDisallowInterceptTouchEvent(true);
+                        if ((rectf.right-1 < getWidth()||rectf.left==0)) {
+                            getParent().requestDisallowInterceptTouchEvent(false);
+                        } else {
+                            getParent().requestDisallowInterceptTouchEvent(true);
+                        }
                     }
                 }
                 float dx = x - mLastX;
@@ -357,7 +380,7 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
                 mLastX = x;
                 mLastY = y;
 
-                Log.e("AAA", "*****" + dx + "****" + dy);
+//                Log.e("AAA", "*****" + dx + "****" + dy);
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
@@ -429,9 +452,10 @@ public class CustomZoomImageView extends android.support.v7.widget.AppCompatImag
             if (getScale() < mTargetScalde) {
                 tmpScale = BIGGER;
             }
-            if (getScale() > mTargetScalde) {
+            if (getScale() >= mTargetScalde) {
                 tmpScale = SMALL;
             }
+
         }
 
         @Override
