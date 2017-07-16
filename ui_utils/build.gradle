@@ -16,6 +16,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //增加依赖的权限
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        maven {
+            url "https://jitpack.io"
+        }
+    }
 }
 
 dependencies {
@@ -26,6 +36,7 @@ dependencies {
     compile project(':numberprogressbarview')
     //dialog
     compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
+
 }
 //引用到上级目录
 apply from: '../maven.gradle'
