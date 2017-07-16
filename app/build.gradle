@@ -53,6 +53,8 @@ dependencies {
     compile project(':dialog_select_address')
     //ui库（SnackbarUtils）
     compile project(':ui_utils')
+//    compile 'com.github.yylxy.YYUtilsNew:ui_utils:1.1.5'
+
     //引导页
     compile project(':guidance_activity')
     //view 测试
