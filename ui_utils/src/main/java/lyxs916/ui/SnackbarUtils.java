@@ -1,4 +1,4 @@
-package lyxs916.ui_utils;
+package lyxs916.ui;
 
 import android.app.Activity;
 import android.support.design.widget.Snackbar;

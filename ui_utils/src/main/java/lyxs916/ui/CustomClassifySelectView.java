@@ -1,4 +1,4 @@
-package lyxs916.ui_utils;
+package lyxs916.ui;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.flexbox.FlexboxLayout;
+
+import lyxs916.other.DimensUtils;
+import lyxs916.ui_utils.R;
 
 
 /**

@@ -19,7 +19,7 @@ import lyxs916.demotest.PhotoCropTest;
 import lyxs916.dialogselectaddress.DialogCitySelect;
 import lyxs916.guidance_activity.GuidanceActivity;
 import lyxs916.java_bean.MainData;
-import lyxs916.ui_utils.SnackbarUtils;
+import lyxs916.ui.SnackbarUtils;
 import lyxs_916.view_utils.photo.PhotoActivity;
 
 import static lyxs916.guidance_activity.GuidanceActivity.pressListener;

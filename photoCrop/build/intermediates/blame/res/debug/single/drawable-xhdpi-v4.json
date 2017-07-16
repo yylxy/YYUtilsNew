@@ -1,17 +1,5 @@
 [
     {
-        "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__tile.png",
-        "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\drawable-xhdpi\\crop__tile.png"
-    },
-    {
-        "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__ic_cancel.png",
-        "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\drawable-xhdpi\\crop__ic_cancel.png"
-    },
-    {
-        "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__ic_done.png",
-        "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\drawable-xhdpi\\crop__ic_done.png"
-    },
-    {
         "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__ic_cancel.png",
         "source": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\src\\main\\res\\drawable-xhdpi\\crop__ic_cancel.png"
     },
@@ -22,10 +10,6 @@
     {
         "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__tile.png",
         "source": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\src\\main\\res\\drawable-xhdpi\\crop__tile.png"
-    },
-    {
-        "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__divider.9.png",
-        "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\drawable-xhdpi\\crop__divider.9.png"
     },
     {
         "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\crop__divider.9.png",

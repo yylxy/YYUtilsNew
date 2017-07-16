@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\release\\layout\\crop__activity_crop.xml",
-        "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\layout\\crop__activity_crop.xml"
+        "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\release\\layout\\crop__activity_crop.xml",
+        "source": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\src\\main\\res\\layout\\crop__activity_crop.xml"
     },
     {
-        "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\release\\layout\\crop__layout_done_cancel.xml",
-        "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\layout\\crop__layout_done_cancel.xml"
+        "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\release\\layout\\crop__layout_done_cancel.xml",
+        "source": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\src\\main\\res\\layout\\crop__layout_done_cancel.xml"
     }
 ]

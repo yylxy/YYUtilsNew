@@ -16,7 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import lyxs916.addressselect.R;
-import lyxs916.ui_utils.SnackbarUtils;
+import lyxs916.ui.SnackbarUtils;
 
 
 /**
