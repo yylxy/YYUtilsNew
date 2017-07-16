@@ -4,6 +4,14 @@
         "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\drawable\\crop__selectable_background.xml"
     },
     {
+        "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable\\crop__selectable_background.xml",
+        "source": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\src\\main\\res\\drawable\\crop__selectable_background.xml"
+    },
+    {
+        "merged": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable\\crop__texture.xml",
+        "source": "D:\\MyAndroidStudioProjects\\utils\\YYUtilsNew\\photoCrop\\src\\main\\res\\drawable\\crop__texture.xml"
+    },
+    {
         "merged": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\build\\intermediates\\res\\merged\\debug\\drawable\\crop__texture.xml",
         "source": "D:\\studioWorkspace\\demoObject\\YYUtils\\photoCrop\\src\\main\\res\\drawable\\crop__texture.xml"
     }

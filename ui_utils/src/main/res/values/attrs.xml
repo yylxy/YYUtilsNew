@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    //=========================================================================上面是基础属性======================================================================
+    <!--单标题选择-->
+    <declare-styleable name="SingleTitle">
+        <attr name="STTitle" format="string" />
+        <attr name="STTextSize" format="dimension" />
+        <attr name="STTextColor" format="color" />
+        <attr name="STRondSize" format="dimension" />
+        <attr name="STStrokeSize" format="dimension" />
+    </declare-styleable>
+
+
+    <!--收藏按钮-->
+    <declare-styleable name="CustomCollectView">
+        <attr name="CCVTextSize" format="dimension" />
+        <attr name="CCVIconSize" format="integer" />
+        <attr name="CCVTextColor" format="color" />
+        <attr name="CCVRondSize" format="dimension" />
+        <attr name="CCVStrokeSize" format="dimension" />
+    </declare-styleable>
+
+
+    <!--数量选择器-->
+    <declare-styleable name="NumberSelectCircle">
+        <attr name="SingleTitleTextSize" format="dimension" />
+    </declare-styleable>
+
+    <!--分类选择-->
+    <declare-styleable name="CustomClassifySelectView">
+        <attr name="CSFLClassify" format="string" />
+        <attr name="CSFLTextSize" format="dimension" />
+        <attr name="CSFLMarginSize" format="dimension" />
+        <attr name="CSFLPaddingSize" format="dimension" />
+        <attr name="CSFLBackgroundColorDefault" format="color" />
+        <attr name="CSFLBackgroundColorSelect" format="color" />
+        <attr name="CSFLTextColor" format="color" />
+        <attr name="CSFLTextColorSelect" format="color" />
+        <attr name="CSFLStrokeColor" format="color" />
+        <attr name="CSFLRoundSize" format="dimension" />
+        <attr name="CSFLStrokeSize" format="dimension" />
+        <attr name="CSFLStrokeColorDefault" format="color" />
+
+    </declare-styleable>
+
+
+</resources>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\studioWorkspace\demoObject\YYUtils\photoCrop\src\main\assets"/><source path="D:\studioWorkspace\demoObject\YYUtils\photoCrop\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\studioWorkspace\demoObject\YYUtils\photoCrop\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\MyAndroidStudioProjects\utils\YYUtilsNew\photoCrop\src\main\assets"/><source path="D:\MyAndroidStudioProjects\utils\YYUtilsNew\photoCrop\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\MyAndroidStudioProjects\utils\YYUtilsNew\photoCrop\src\debug\assets"/></dataSet></merger>

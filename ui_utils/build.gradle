@@ -21,6 +21,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:design:25.1.0'
+    compile 'com.google.android:flexbox:0.1.2'
 }
 //引用到上级目录
 apply from: '../maven.gradle'
