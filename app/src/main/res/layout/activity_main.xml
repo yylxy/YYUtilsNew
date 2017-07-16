@@ -11,9 +11,17 @@
         android:id="@+id/selectNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentRight="true"/>
 
-    </lyxs916.view.NumberSelectRect>
+
+    <com.hbung.animcheckbox.AnimCheckBox xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        app:ab_text="全选"
+        app:ab_textColor="@color/gray_33" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

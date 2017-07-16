@@ -63,6 +63,8 @@ dependencies {
     compile project(':photoCrop')
     //广告位
     compile project(':banner')
+    
+    compile project(':animcheckbox')
 
     /*=====================================================arr=========================================================*/
     //    compile(name: 'dialog_select_address-debug', ext: "aar") //dialog联动地址选择
