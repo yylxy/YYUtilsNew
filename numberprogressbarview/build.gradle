@@ -22,3 +22,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+//引用到上级目录
+apply from: '../maven.gradle'
