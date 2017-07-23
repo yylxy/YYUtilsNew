@@ -67,6 +67,6 @@ dependencies {
     compile project(':animcheckbox')
 
     /*=====================================================arr=========================================================*/
-    //    compile(name: 'dialog_select_address-debug', ext: "aar") //dialog联动地址选择
+//        compile(name: 'dialog_select_address-debug', ext: "aar") //dialog联动地址选择
 
 }

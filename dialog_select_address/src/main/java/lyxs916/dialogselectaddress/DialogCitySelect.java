@@ -217,6 +217,34 @@ public class DialogCitySelect extends Dialog implements View.OnClickListener {
         }
     }
 
+    /**
+     * 设置只显示指定的省份
+     *
+     * @param proviceName
+     */
+    public void setAssignProvinces(String proviceName) {
+        try {
+            ArrayList<LoopViewData> provinces2 = new ArrayList<>();
+            for (int i = 0; i < provinces.size(); i++) {
+                if (provinces.get(i).getName().equals(proviceName)) {
+                    LoopViewData d = new LoopViewData();
+                    d.setName(provinces.get(i).getName());
+                    d.setId(provinces.get(i).getId());
+                    provinces2.add(d);
+                    break;
+                }
+            }
+            province.setArrayList(provinces2);
+            addCity(provinces2.get(0).getId());
+            pccData.province = provinces2.get(0).getName();
+            pccData.provinceId = provinces2.get(0).getId();
+            selectName.setText(pccData.province + "-" + pccData.city + "-" + pccData.county);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     //解析城市
     private void addCity(int id) {
         try {
