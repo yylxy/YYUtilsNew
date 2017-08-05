@@ -238,6 +238,7 @@ public class DialogCitySelect extends Dialog implements View.OnClickListener {
             addCity(provinces2.get(0).getId());
             pccData.province = provinces2.get(0).getName();
             pccData.provinceId = provinces2.get(0).getId();
+            addCity(pccData.provinceId, pccData.cityId);
             selectName.setText(pccData.province + "-" + pccData.city + "-" + pccData.county);
         } catch (Exception e) {
             e.printStackTrace();

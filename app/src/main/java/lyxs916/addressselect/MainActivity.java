@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
                         });
                         dialogCitySelect.show();
                         dialogCitySelect.setAssignProvinces("浙江");
-                        dialogCitySelect.setCallBack(new DialogCitySelect.CallBack() {
-                            @Override
-                            public void setData(DialogCitySelect.PCCData data) {
-                                SnackbarUtils.showFinishBlue(MainActivity.this, data.province + data.city + data.county);
-                            }
-                        });
+//                        dialogCitySelect.setCallBack(new DialogCitySelect.CallBack() {
+//                            @Override
+//                            public void setData(DialogCitySelect.PCCData data) {
+//                                SnackbarUtils.showFinishBlue(MainActivity.this, data.province + data.city + data.county);
+//                            }
+//                        });
                         break;
 
                     //snackbar 测试
