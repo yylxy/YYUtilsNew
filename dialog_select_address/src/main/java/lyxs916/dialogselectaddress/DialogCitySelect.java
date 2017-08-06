@@ -192,15 +192,19 @@ public class DialogCitySelect extends Dialog implements View.OnClickListener {
      */
     private void initJsonData() {
         try {
-            StringBuffer sb = new StringBuffer();
-            InputStream is = context.getClass().getClassLoader().getResourceAsStream("assets/" + "address.json");
+            StringBuilder sb = new StringBuilder();
+            //加载只有浙江的地址
+            InputStream is = context.getClass().getClassLoader().getResourceAsStream("assets/" + "address_zhe_jiang.json");
             int len = -1;
             byte[] buf = new byte[is.available()];
 
             is.read(buf);
             sb.append(new String(buf, "utf-8"));
             is.close();
-            JSONObject mJsonObj = new JSONObject(sb.toString());
+            String str=sb.toString();
+            JSONObject mJsonObj = new JSONObject(str);
+
+
             jsonArrayParent = mJsonObj.getJSONArray("Province");
 
             //解析省
@@ -378,4 +382,7 @@ public class DialogCitySelect extends Dialog implements View.OnClickListener {
         this.callBack = callBack;
 
     }
+
+
+
 }
